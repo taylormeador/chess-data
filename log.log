@@ -1,0 +1,66 @@
+2022-12-07 16:03:28,983 Starting new HTTPS connection (1): database.lichess.org:443
+2022-12-07 16:03:29,891 https://database.lichess.org:443 "GET /standard/list.txt HTTP/1.1" 200 None
+2022-12-07 16:03:29,892 Retrieved download links
+2022-12-07 16:04:40,631 Starting new HTTPS connection (1): database.lichess.org:443
+2022-12-07 16:04:41,584 https://database.lichess.org:443 "GET /standard/list.txt HTTP/1.1" 200 None
+2022-12-07 16:04:41,585 Retrieved download links
+2022-12-07 16:05:04,072 Starting new HTTPS connection (1): database.lichess.org:443
+2022-12-07 16:05:04,705 https://database.lichess.org:443 "GET /standard/list.txt HTTP/1.1" 200 None
+2022-12-07 16:05:04,706 Retrieved download links
+2022-12-07 16:23:35,968 Starting new HTTPS connection (1): database.lichess.org:443
+2022-12-07 16:23:36,904 https://database.lichess.org:443 "GET /standard/list.txt HTTP/1.1" 200 None
+2022-12-07 16:23:36,906 Retrieved download links
+2022-12-07 16:23:51,215 Starting new HTTPS connection (1): database.lichess.org:443
+2022-12-07 16:23:51,871 https://database.lichess.org:443 "GET /standard/list.txt HTTP/1.1" 200 None
+2022-12-07 16:23:51,873 Retrieved download links
+2022-12-07 16:24:07,751 Starting new HTTPS connection (1): database.lichess.org:443
+2022-12-07 16:24:08,448 https://database.lichess.org:443 "GET /standard/list.txt HTTP/1.1" 200 None
+2022-12-07 16:24:08,449 Retrieved download links
+2022-12-07 16:27:07,616 Starting new HTTPS connection (1): database.lichess.org:443
+2022-12-07 16:27:08,149 https://database.lichess.org:443 "GET /standard/list.txt HTTP/1.1" 200 None
+2022-12-07 16:27:08,150 Retrieved download links
+2022-12-07 16:27:36,407 Starting new HTTPS connection (1): database.lichess.org:443
+2022-12-07 16:27:37,159 https://database.lichess.org:443 "GET /standard/list.txt HTTP/1.1" 200 None
+2022-12-07 16:27:37,161 Retrieved download links
+2022-12-07 16:27:44,270 Starting new HTTPS connection (1): database.lichess.org:443
+2022-12-07 16:27:45,248 https://database.lichess.org:443 "GET /standard/list.txt HTTP/1.1" 200 None
+2022-12-07 16:27:45,249 Retrieved download links
+2022-12-07 16:34:37,034 Starting new HTTPS connection (1): database.lichess.org:443
+2022-12-07 16:34:37,706 https://database.lichess.org:443 "GET /standard/list.txt HTTP/1.1" 200 None
+2022-12-07 16:34:37,707 Retrieved download links
+2022-12-07 16:34:37,708 Starting new HTTPS connection (1): database.lichess.org:443
+2022-12-07 16:34:38,483 https://database.lichess.org:443 "GET /standard/lichess_db_standard_rated_2022-11.pgn.zst HTTP/1.1" 200 28851245687
+2022-12-07 16:57:56,690 Starting new HTTPS connection (1): database.lichess.org:443
+2022-12-07 16:57:57,908 https://database.lichess.org:443 "GET /standard/list.txt HTTP/1.1" 200 None
+2022-12-07 16:57:57,909 Retrieved download links
+2022-12-07 16:58:06,586 Starting new HTTPS connection (1): database.lichess.org:443
+2022-12-07 16:58:07,364 https://database.lichess.org:443 "GET /standard/list.txt HTTP/1.1" 200 None
+2022-12-07 16:58:07,365 Retrieved download links
+2022-12-07 16:58:32,768 Starting new HTTPS connection (1): database.lichess.org:443
+2022-12-07 16:58:33,371 https://database.lichess.org:443 "GET /standard/list.txt HTTP/1.1" 200 None
+2022-12-07 16:58:33,372 Retrieved download links
+2022-12-07 16:58:49,270 Starting new HTTPS connection (1): database.lichess.org:443
+2022-12-07 16:58:50,189 https://database.lichess.org:443 "GET /standard/list.txt HTTP/1.1" 200 None
+2022-12-07 16:58:50,190 Retrieved download links
+2022-12-07 17:01:34,152 Starting new HTTPS connection (1): database.lichess.org:443
+2022-12-07 17:01:34,899 https://database.lichess.org:443 "GET /standard/list.txt HTTP/1.1" 200 None
+2022-12-07 17:01:34,900 Retrieved download links
+2022-12-07 17:01:34,901 Starting new HTTPS connection (1): database.lichess.org:443
+2022-12-07 17:01:35,716 https://database.lichess.org:443 "GET /standard/lichess_db_standard_rated_2022-11.pgn.zst HTTP/1.1" 200 28851245687
+2022-12-07 17:32:18,452 Starting new HTTPS connection (1): database.lichess.org:443
+2022-12-07 17:32:19,066 https://database.lichess.org:443 "GET /standard/list.txt HTTP/1.1" 200 None
+2022-12-07 17:32:19,067 Retrieved download links
+2022-12-07 17:32:50,142 Starting new HTTPS connection (1): database.lichess.org:443
+2022-12-07 17:32:50,610 https://database.lichess.org:443 "GET /standard/list.txt HTTP/1.1" 200 None
+2022-12-07 17:32:50,611 Retrieved download links
+2022-12-07 17:33:00,042 Starting new HTTPS connection (1): database.lichess.org:443
+2022-12-07 17:33:00,720 https://database.lichess.org:443 "GET /standard/list.txt HTTP/1.1" 200 None
+2022-12-07 17:33:00,721 Retrieved download links
+2022-12-07 17:33:00,722 File already exists, trying next link...
+2022-12-07 17:34:10,080 Starting new HTTPS connection (1): database.lichess.org:443
+2022-12-07 17:34:10,758 https://database.lichess.org:443 "GET /standard/list.txt HTTP/1.1" 200 None
+2022-12-07 17:34:10,759 Retrieved download links
+2022-12-07 17:34:10,759 File already exists, trying next link...
+2022-12-07 17:34:10,760 Starting new HTTPS connection (1): database.lichess.org:443
+2022-12-07 17:34:12,089 https://database.lichess.org:443 "GET /standard/lichess_db_standard_rated_2022-10.pgn.zst HTTP/1.1" 200 29973814533
+2022-12-07 17:34:12,089 Downloading lichess_db_standard_rated_2022-10.pgn.zst
