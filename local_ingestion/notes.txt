@@ -1,3 +1,4 @@
+# postgres container (no network)
 sudo docker run -it \
   -e POSTGRES_USER="root" \
   -e POSTGRES_PASSWORD="root" \
@@ -6,12 +7,46 @@ sudo docker run -it \
   -p 5432:5432 \
   postgres:13
 
+# with network
+sudo docker run -it \
+  -e POSTGRES_USER="root" \
+  -e POSTGRES_PASSWORD="root" \
+  -e POSTGRES_DB="chess_data" \
+  -v $(pwd)/postgres_data:/var/lib/postgresql/data \
+  -p 5432:5432 \
+  --network=pg-network \
+  --name pg-database \
+  postgres:13
+
+pgcli -h localhost -p 5432 -u root -d chess_data
+
+# script with args
+python local_ingestion.py \
+  --user=root \
+  --password=root \
+  --host=localhost \
+  --port=5432 \
+  --db=chess_data \
+  --table_name=lichess_pgn_2014_10 \
+  --file_path=home/repos/chess-data/local_ingestion/lichess_pgn/lichess_db_standard_rated_2014-10.pgn'
+
+# script in container
+sudo docker run -it \
+  --network=pg-network \
+  pgn_ingest:v1 \
+    --user=root \
+    --password=root \
+    --host=pg-database \
+    --port=5432 \
+    --db=chess_data \
+    --file_path=pgn.pgn
+
 
 CREATE TABLE lichess_pgn
 (id SERIAL PRIMARY KEY, event VARCHAR(255), site VARCHAR(255), date VARCHAR(255), round VARCHAR(255),
 white VARCHAR(255), black VARCHAR(255), result VARCHAR(255), white_elo VARCHAR(255), black_elo VARCHAR(255), 
 white_rating_diff VARCHAR(255), black_rating_diff VARCHAR(255), eco VARCHAR(255), 
-opening VARCHAR(255) , termination VARCHAR(255), time_control VARCHAR(255), utd_date VARCHAR(255), utc_time VARCHAR(255))
+opening VARCHAR(255) , termination VARCHAR(255), time_control VARCHAR(255), utc_date VARCHAR(255), utc_time VARCHAR(255))
 
 # headers['Event']
 # headers['Site']

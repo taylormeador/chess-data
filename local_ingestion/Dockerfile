@@ -1,8 +1,9 @@
 FROM python:3.9
 
-RUN pip install pandas
+RUN pip install chess psycopg2
 
 WORKDIR /app
-COPY pipeline.py pipeline.py
+COPY local_ingestion.py local_ingestion.py
+COPY lihcess_pgn/lichess_db_standard_rated_2013-01.pgn pgn.pgn
  
-ENTRYPOINT [ "python", "pipeline.py" ]
+ENTRYPOINT [ "python", "local_ingestion.py" ]
