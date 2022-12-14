@@ -1,0 +1,32 @@
+sudo docker run -it \
+  -e POSTGRES_USER="root" \
+  -e POSTGRES_PASSWORD="root" \
+  -e POSTGRES_DB="chess_data" \
+  -v $(pwd)/postgres_data:/var/lib/postgresql/data \
+  -p 5432:5432 \
+  postgres:13
+
+
+CREATE TABLE lichess_pgn
+(id SERIAL PRIMARY KEY, event VARCHAR(255), site VARCHAR(255), date VARCHAR(255), round VARCHAR(255),
+white VARCHAR(255), black VARCHAR(255), result VARCHAR(255), white_elo VARCHAR(255), black_elo VARCHAR(255), 
+white_rating_diff VARCHAR(255), black_rating_diff VARCHAR(255), eco VARCHAR(255), 
+opening VARCHAR(255) , termination VARCHAR(255), time_control VARCHAR(255), utd_date VARCHAR(255), utc_time VARCHAR(255))
+
+# headers['Event']
+# headers['Site']
+# headers['Date']
+# headers['Round']
+# headers['White']
+# headers['Black']
+# headers['Result']
+# headers['BlackElo']
+# headers['BlackRatingDiff']
+# headers['ECO']
+# headers['Opening']
+# headers['Termination']
+# headers['TimeControl']
+# headers['UTCDate']
+# headers['UTCTime']
+# headers['WhiteElo']
+# headers['WhiteRatingDiff']
