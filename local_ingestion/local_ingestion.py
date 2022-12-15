@@ -22,13 +22,15 @@ def main(params):
                     port=port
                 )
         cur = conn.cursor()
+        print('success')
+        sys.exit()  # remove me TODO
     except Exception as e:
         print('failed to connect to db:', e)
         sys.exit()
 
     # create table
     cur.execute(' \
-    CREATE TABLE IF NOT EXISTS lichess_pgn_2013_01 \
+    CREATE TABLE IF NOT EXISTS lichess_pgn_2013_02 \
     (id SERIAL PRIMARY KEY, event VARCHAR(255), site VARCHAR(255), date VARCHAR(255), round VARCHAR(255),  \
     white VARCHAR(255), black VARCHAR(255), result VARCHAR(255), white_elo VARCHAR(255), black_elo VARCHAR(255),   \
     white_rating_diff VARCHAR(255), black_rating_diff VARCHAR(255), eco VARCHAR(255),  \
@@ -39,7 +41,6 @@ def main(params):
     with open(file_path) as f:
         pgn = chess.pgn.read_game(f)
         while pgn:
-
             # parse game info
             game_info = {
             'Event': None,
@@ -68,7 +69,7 @@ def main(params):
 
 
             # insert to db
-            cur.execute("INSERT INTO lichess_pgn_2013_01 \
+            cur.execute("INSERT INTO lichess_pgn_2013_02 \
             (event, site, date, round, white, black, result, white_elo, black_elo, white_rating_diff, black_rating_diff, eco, opening, termination, time_control, utc_date, utc_time, moves) \
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", \
             (game_info['Event'], game_info['Site'], game_info['Date'], game_info['Round'], 
@@ -88,7 +89,7 @@ if __name__ == '__main__':
     parser.add_argument('--host', required=True, help='host for postgres')
     parser.add_argument('--port', required=True, help='port for postgres')
     parser.add_argument('--db', required=True, help='database name for postgres')
-    parser.add_argument('--table_name', required=True, help='name of the table where we will write the results to')
+    # parser.add_argument('--table_name', required=True, help='name of the table where we will write the results to')
     # '../lichess_pgn/lichess_db_standard_rated_2014-10.pgn'
     parser.add_argument('--file_path', required=True, help='path of the pgn file')
 
