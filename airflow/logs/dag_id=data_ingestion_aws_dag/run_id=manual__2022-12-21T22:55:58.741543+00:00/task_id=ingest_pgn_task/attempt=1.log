@@ -1,0 +1,32 @@
+[2022-12-21T23:01:05.523+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: data_ingestion_aws_dag.ingest_pgn_task manual__2022-12-21T22:55:58.741543+00:00 [queued]>
+[2022-12-21T23:01:05.542+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: data_ingestion_aws_dag.ingest_pgn_task manual__2022-12-21T22:55:58.741543+00:00 [queued]>
+[2022-12-21T23:01:05.542+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-21T23:01:05.542+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 2
+[2022-12-21T23:01:05.542+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-21T23:01:05.570+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): ingest_pgn_task> on 2022-12-21 22:55:58.741543+00:00
+[2022-12-21T23:01:05.575+0000] {standard_task_runner.py:55} INFO - Started process 93 to run task
+[2022-12-21T23:01:05.579+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_aws_dag', 'ingest_pgn_task', 'manual__2022-12-21T22:55:58.741543+00:00', '--job-id', '40', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_aws_dag.py', '--cfg-path', '/tmp/tmp7uybgipj']
+[2022-12-21T23:01:05.580+0000] {standard_task_runner.py:83} INFO - Job 40: Subtask ingest_pgn_task
+[2022-12-21T23:01:05.659+0000] {task_command.py:389} INFO - Running <TaskInstance: data_ingestion_aws_dag.ingest_pgn_task manual__2022-12-21T22:55:58.741543+00:00 [running]> on host 2cb726d015ae
+[2022-12-21T23:01:05.829+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=data_ingestion_aws_dag
+AIRFLOW_CTX_TASK_ID=ingest_pgn_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-21T22:55:58.741543+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-12-21T22:55:58.741543+00:00
+[2022-12-21T23:01:05.853+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/data_ingestion_aws_dag.py", line 35, in ingest_pgn
+    import chess
+ModuleNotFoundError: No module named 'chess'
+[2022-12-21T23:01:05.863+0000] {taskinstance.py:1327} INFO - Marking task as UP_FOR_RETRY. dag_id=data_ingestion_aws_dag, task_id=ingest_pgn_task, execution_date=20221221T225558, start_date=20221221T230105, end_date=20221221T230105
+[2022-12-21T23:01:05.878+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 40 for task ingest_pgn_task (No module named 'chess'; 93)
+[2022-12-21T23:01:05.911+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2022-12-21T23:01:05.962+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check

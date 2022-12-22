@@ -1,0 +1,32 @@
+[2022-12-21T21:42:28.420+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: data_ingestion_aws_dag.unzip_pgn_task manual__2022-12-21T20:41:01.501505+00:00 [queued]>
+[2022-12-21T21:42:28.513+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: data_ingestion_aws_dag.unzip_pgn_task manual__2022-12-21T20:41:01.501505+00:00 [queued]>
+[2022-12-21T21:42:28.513+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-21T21:42:28.513+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 2
+[2022-12-21T21:42:28.513+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-21T21:42:28.634+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): unzip_pgn_task> on 2022-12-21 20:41:01.501505+00:00
+[2022-12-21T21:42:28.640+0000] {standard_task_runner.py:55} INFO - Started process 64 to run task
+[2022-12-21T21:42:28.643+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_aws_dag', 'unzip_pgn_task', 'manual__2022-12-21T20:41:01.501505+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_aws_dag.py', '--cfg-path', '/tmp/tmp8slfuug5']
+[2022-12-21T21:42:28.644+0000] {standard_task_runner.py:83} INFO - Job 17: Subtask unzip_pgn_task
+[2022-12-21T21:42:28.793+0000] {task_command.py:389} INFO - Running <TaskInstance: data_ingestion_aws_dag.unzip_pgn_task manual__2022-12-21T20:41:01.501505+00:00 [running]> on host dd56c2ebcf51
+[2022-12-21T21:42:29.166+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=data_ingestion_aws_dag
+AIRFLOW_CTX_TASK_ID=unzip_pgn_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-21T20:41:01.501505+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-12-21T20:41:01.501505+00:00
+[2022-12-21T21:42:29.167+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/data_ingestion_aws_dag.py", line 21, in unzip_pgn
+    with open(input_file, 'rb') as compressed:
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/lichess_db_standard_rated_2013-01.pgn.zst'
+[2022-12-21T21:42:29.200+0000] {taskinstance.py:1327} INFO - Marking task as UP_FOR_RETRY. dag_id=data_ingestion_aws_dag, task_id=unzip_pgn_task, execution_date=20221221T204101, start_date=20221221T214228, end_date=20221221T214229
+[2022-12-21T21:42:29.241+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 17 for task unzip_pgn_task ([Errno 2] No such file or directory: '/opt/airflow/lichess_db_standard_rated_2013-01.pgn.zst'; 64)
+[2022-12-21T21:42:29.257+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2022-12-21T21:42:29.280+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check
