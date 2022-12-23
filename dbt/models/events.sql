@@ -1,0 +1,1 @@
+select event, count(event) from lichess_pgn_2013_01 group by event order by count desc
