@@ -17,7 +17,7 @@ class DB:
         self.cur.execute(""" \
         WITH openings_count AS ( \
         SELECT opening, COUNT(opening) AS opening_count \
-        FROM lichess_pgn_2013_01 \
+        FROM games \
         WHERE %s = '%s' \
         GROUP BY opening \
             ) \
@@ -25,7 +25,7 @@ class DB:
             openings_count.opening_count AS num_games, \
             COUNT(pgn.result) AS num_wins, \
             COUNT(pgn.result)::NUMERIC / openings_count.opening_count::NUMERIC * 100 AS ratio
-        FROM lichess_pgn_2013_01 as pgn \
+        FROM games as pgn \
         JOIN openings_count \
         ON pgn.opening = openings_count.opening \
         WHERE %s = '%s' \
@@ -40,7 +40,7 @@ class DB:
         self.cur.execute(""" \
         WITH openings_count AS ( \
         SELECT opening, COUNT(opening) AS opening_count \
-        FROM lichess_pgn_2013_01 \
+        FROM games \
         WHERE %s = '%s' \
         GROUP BY opening \
             ) \
@@ -48,7 +48,7 @@ class DB:
             openings_count.opening_count AS num_games, \
             COUNT(pgn.result) AS num_losses, \
             COUNT(pgn.result)::NUMERIC / openings_count.opening_count::NUMERIC * 100 AS ratio
-        FROM lichess_pgn_2013_01 as pgn \
+        FROM games as pgn \
         JOIN openings_count \
         ON pgn.opening = openings_count.opening \
         WHERE %s = '%s' \

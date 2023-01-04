@@ -42,7 +42,7 @@ def ingest_pgn():
 
     # create table
     query = sql.SQL("CREATE TABLE IF NOT EXISTS {table} \
-    (id SERIAL PRIMARY KEY, event VARCHAR(255), site VARCHAR(255), date VARCHAR(255), round VARCHAR(255),  \
+    (event VARCHAR(255), site VARCHAR(255),  \
     white VARCHAR(255), black VARCHAR(255), result VARCHAR(255), white_elo VARCHAR(255), black_elo VARCHAR(255),   \
     white_rating_diff VARCHAR(255), black_rating_diff VARCHAR(255), eco VARCHAR(255),  \
     opening VARCHAR(255) , termination VARCHAR(255), time_control VARCHAR(255), utc_date VARCHAR(255), utc_time VARCHAR(255), moves VARCHAR(10485760))  \
@@ -82,15 +82,13 @@ def ingest_pgn():
 
             # insert to db
             query = sql.SQL("INSERT INTO {table} \
-            (event, site, date, round, white, black, result, white_elo, black_elo, white_rating_diff, \
+            (event, site, white, black, result, white_elo, black_elo, white_rating_diff, \
             black_rating_diff, eco, opening, termination, time_control, utc_date, utc_time, moves) \
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)").format(table=sql.Identifier(TABLE_NAME))
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)").format(table=sql.Identifier(TABLE_NAME))
             
             args = (
                 game_info['Event'], 
                 game_info['Site'],
-                game_info['Date'],
-                game_info['Round'], 
                 game_info['White'],
                 game_info['Black'],
                 game_info['Result'],
